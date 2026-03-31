@@ -1,0 +1,205 @@
+@use '/src/sass/base/variables.scss' as *;
+
+.footer {
+    padding: 50px 0;
+    background-color: $dark;
+
+    &__spaced {
+        margin-top: 60px;
+    }
+
+    &__newsletter {
+        width: 293px;
+        height: 258px;
+    }
+
+    &__newsletter-title {
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $light;
+    }
+
+    &__newsletter-subtitle {
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        color: $light;
+    }
+
+    &__input {
+        margin-top: 40px;
+        padding-bottom: 15px;
+        background: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $ui-active;
+        width: 293px;
+        height: 32px;
+        color: $light;
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            color: $ui-active;
+        }
+    }
+
+    &__check-block {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        color: $light;
+
+        a {
+            color: #a22dc6;
+            text-decoration: none;
+            margin-left: 3px;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        margin-right: 15px;
+        background-color: transparent;
+        border: 1px solid $light;
+        border-radius: 2px;
+        width: 15px;
+        height: 15px;
+
+        &:checked {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        &:checked::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border: solid $light;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__btn {
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    &__nav {
+        padding-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 66px;
+        row-gap: 40px;
+
+        &_section h3 {
+            margin-bottom: 40px;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: $light;
+        }
+
+        &_section a {
+            display: block;
+            font-weight: 400;
+            font-size: 16px;
+            color: $light;
+            text-decoration: none;
+        }
+
+        &_links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px 0;
+        }
+    }
+
+    &__social {
+        margin-top: 40px;
+        width: 92px;
+        height: 83px;
+
+        &_title {
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: $light;
+        }
+
+        &_wrapper {
+            margin-top: 40px;
+            display: flex;
+            column-gap: 10px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+
+                &::before {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 14px;
+        color: $light;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__newsletter {
+            width: 100%;
+        }
+
+        &__copyright {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer {
+
+        &__nav,
+        &__social {
+            margin: 0;
+            padding: 0;
+        }
+
+        &__newsletter {
+            width: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .footer {
+        padding: 80px 0 50px 0;
+
+        &__spaced {
+            margin-top: 100px;
+        }
+    }
+}
