@@ -39,6 +39,18 @@
     }
 }
 
+.btn-read {
+    @include button;
+    width: 145px;
+    height: 32px;
+    font-size: 14px;
+
+    &:focus {
+        outline: 1px solid $ceramic;
+        border: 1px solid $ceramic;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     .btn-default {
         &:hover {
@@ -67,10 +79,22 @@
         }
     }
 
-    @media screen and (min-width: 1920px) {
-        .btn-default {
-            width: 330px;
-            height: 60px;
+    .btn-read {
+        &:active {
+            outline: 1px solid $ceramic;
+            border: 1px solid $ceramic;
         }
+
+        &:hover {
+            border: 1px solid $ceramic;
+            color: $ceramic;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .btn-default {
+        width: 330px;
+        height: 60px;
     }
 }
