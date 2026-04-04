@@ -10,7 +10,7 @@
 
     &__newsletter {
         width: 293px;
-        height: 258px;
+        min-height: 258px;
     }
 
     &__newsletter-title {
@@ -27,6 +27,12 @@
         color: $light;
     }
 
+    &__fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
     &__input {
         margin-top: 40px;
         padding-bottom: 15px;
@@ -35,7 +41,7 @@
         border: none;
         border-bottom: 1px solid $ui-active;
         width: 293px;
-        height: 32px;
+        min-height: 32px;
         color: $light;
 
         &::placeholder {
