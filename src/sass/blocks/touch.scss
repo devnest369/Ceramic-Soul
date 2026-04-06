@@ -155,6 +155,10 @@
                 outline: 1px solid $dark;
             }
         }
+
+        &__icon {
+            animation: shake 1s infinite;
+        }
     }
 }
 
