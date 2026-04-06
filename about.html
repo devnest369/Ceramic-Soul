@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Website for Ceramic soul brand" />
     <meta name="author" content="Vlad" />
-    <title>Ceramic soul</title>
+    <title>About</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -148,13 +148,19 @@
                 <div class="footer__newsletter">
                     <h2 class="footer__newsletter-title">newsletter</h2>
                     <p class="footer__newsletter-subtitle">Keep up to date with news and promotions</p>
-                    <input class="footer__input" type="email" id="email" name="email" placeholder="Enter your e-mail"
-                        required>
-                    <label class="footer__label footer__check-block" for="checkbox">
-                        <input class="footer__checkbox" type="checkbox" id="checkbox" required>
-                        I agree with the <a href="#">terms</a>
-                    </label>
-                    <button class="btn-submit footer__btn">submit</button>
+                    <form action="#" class="footer__form">
+                        <input class="footer__input" type="email" id="footer__email" name="email"
+                            placeholder="Enter your e-mail" required>
+                        <div class="email-error-message"></div>
+
+                        <label class="footer__label footer__check-block" for="checkbox">
+                            <input class="footer__checkbox" type="checkbox" id="footer__checkbox" required>
+                            I agree with the <a href="#">terms</a>
+                        </label>
+                        <div class="check-error-message"></div>
+
+                        <button class="btn-submit footer__btn">submit</button>
+                    </form>
                 </div>
                 <div class="footer__nav">
                     <div class="footer__nav_section">

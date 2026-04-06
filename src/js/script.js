@@ -69,53 +69,70 @@ try {
 } catch (e) { }
 
 try {
-    const validator = new JustValidate('#form');
+    const validatorTouch = new JustValidate(".touch__form");
 
-    validator
-        .addField('#name', [
+    validatorTouch
+        .addField("#name", [
             {
-                rule: 'required',
-                errorMessage: 'Please fill the name',
+                rule: "required",
+                errorMessage: "Please fill the name",
             },
             {
-                rule: 'minLength',
-                value: 3,
-                errorMessage: 'Minimum 3 characters!',
-            },
-        ])
-        .addField('#email', [
-            {
-                rule: 'required',
-                errorMessage: 'Please fill the email'
-            },
-            {
-                rule: 'email',
+                rule: "minLength",
+                value: 2,
+                errorMessage: "Minimum 2 chars!",
             },
         ])
-        .addField('#question', [
+        .addField("#email", [
             {
-                rule: 'required',
-                errorMessage: 'Write your question'
+                rule: "required",
+                errorMessage: "Please fill the email",
             },
             {
-                rule: 'minLength',
+                rule: "email",
+            },
+        ])
+        .addField("#question", [
+            {
+                rule: "required",
+                errorMessage: "Write your question",
+            },
+            {
+                rule: "minLength",
                 value: 5,
-                errorMessage: 'Minimum 5 characters!',
             },
-        ], {
-            errorsContainer: document
-                .querySelector('#question')
-                .parentElement.querySelector('.error-message'),
-        })
-        .addField('#checkbox', [
+        ],
             {
-                rule: 'required',
-                errorMessage: 'Please read the terms'
+                errorsContainer: document
+                    .querySelector("#question")
+                    .parentElement.querySelector(".error-message"),
+            }
+        )
+        .addField("#checkbox", [
+            {
+                rule: "required",
+                errorMessage: "Please read the terms",
             },
-        ], {
-            errorsContainer: document
-                .querySelector('#checkbox')
-                .parentElement.parentElement.querySelector('.checkbox-error-message'),
+        ],
+            {
+                errorsContainer: document
+                    .querySelector("#checkbox")
+                    .parentElement.parentElement.querySelector(".checkbox-error-message"),
+            }
+        )
+        .onSuccess((event) => {
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: formData,
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("Success", data);
+                    form.reset();
+                });
         });
 } catch (e) { }
 
@@ -153,5 +170,19 @@ try {
                     .querySelector("#footer__checkbox")
                     .parentElement.parentElement.querySelector(".check-error-message"),
             }
-        );
+        )
+        .onSuccess((event) => {
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: formData,
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("Success", data);
+                    form.reset();
+                });
+        });
 } catch (e) { }
